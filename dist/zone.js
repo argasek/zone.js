@@ -297,7 +297,9 @@ var Zone$1 = (function (global) {
             var prev = counts[type];
             var next = counts[type] = prev + count;
             if (next < 0) {
-                throw new Error('More tasks executed then were scheduled.');
+                // console.error('More tasks executed then were scheduled.');
+                debugger;
+                return;
             }
             if (prev == 0 || next == 0) {
                 var isEmpty = {

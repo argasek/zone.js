@@ -852,7 +852,9 @@ const Zone: ZoneType = (function(global: any) {
       const prev = counts[type];
       const next = counts[type] = prev + count;
       if (next < 0) {
-        throw new Error('More tasks executed then were scheduled.');
+        // console.error('More tasks executed then were scheduled.');
+        debugger;
+        return;
       }
       if (prev == 0 || next == 0) {
         const isEmpty: HasTaskState = {
